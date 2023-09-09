@@ -32,7 +32,7 @@ Reference:
 
 - Other examples: https://github.com/GeneDx/pgr-tk-notebooks/
 
-- The PGR-TK code: github.com/genedx/pgr-tk and github.com/cschin/pgr-tk
+- The PGR-TK code: https://github.com/genedx/pgr-tk and https://github.com/cschin/pgr-tk
 
 
 
