@@ -26,6 +26,14 @@ scripts/run_pg_asm.shi                  # the example running Peregrine2021 to a
 scripts/build_pbd.sh                    # the example to use PGR-TK to process the KIR pangenome
 ```
 
+
+Proposed projects:
+
+1. Using miniprop to align protein sequences on the pan-KIR sequences
+2. Using LLM / ML technique to classify the pan-KIR sequence
+4. Imputation missing sequence and genotype additional data with known haplotype sequence combination
+
+
 Reference:
 
 - Paper: Multiscale analysis of pangenomes enables improved representation of genomic diversity for repetitive and clinically relevant genes: https://www.nature.com/articles/s41592-023-01914-y
@@ -33,6 +41,10 @@ Reference:
 - Other examples: https://github.com/GeneDx/pgr-tk-notebooks/
 
 - The PGR-TK code: https://github.com/genedx/pgr-tk and https://github.com/cschin/pgr-tk
+
+- protein sequences ftp://ftp.dfci.harvard.edu/pub/hli/tmp/pangene-primate-20230811.tar
+
+- minprop: https://github.com/lh3/miniprot.git
 
 
 
