@@ -30,8 +30,8 @@ scripts/build_pbd.sh                    # the example to use PGR-TK to process t
 Proposed projects:
 
 1. Using miniprop to align protein sequences on the pan-KIR sequences
-2. Using LLM / ML technique to classify the pan-KIR sequence
-4. Imputation missing sequence and genotype additional data with known haplotype sequence combination
+2. Using LLM / ML techniques to classify the pan-KIR sequences
+4. Imputation missing sequenceand genotype additional read eata with known haplotype sequence combinations
 
 
 Reference:
