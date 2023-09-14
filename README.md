@@ -22,7 +22,7 @@ Scripts:
 
 ```
 scripts/run_hifiasm.sh                  # the example to sub-sampling and run hifiasm for assembling the targeted reads
-scripts/run_pg_asm.shi                  # the example running Peregrine2021 to assemble the targeted reads
+scripts/run_pg_asm.sh                   # the example running Peregrine2021 to assemble the targeted reads
 scripts/build_pbd.sh                    # the example to use PGR-TK to process the KIR pangenome
 ```
 
@@ -45,6 +45,17 @@ Reference:
 - protein sequences ftp://ftp.dfci.harvard.edu/pub/hli/tmp/pangene-primate-20230811.tar
 
 - minprop: https://github.com/lh3/miniprot.git
+
+- Immuannot: https://github.com/YingZhou001/Immuannot.git
+
+- py-gfe: https://github.com/nmdp-bioinformatics/py-gfe
+
+- GFE service: https://github.com/nmdp-bioinformatics/gfe-service
+
+- https://hub.docker.com/r/nmdpbioinformatics/imgt_biosqldb/
+
+- https://hub.docker.com/r/nmdpbioinformatics/gfe-db/
+
 
 
 
