@@ -29,6 +29,7 @@ if __name__ == "__main__":
     sdb = pgrtk.SeqIndexDB()
     sdb.load_from_fastx(arguments['<sequences.fa.gz>'])
     sinfo = sdb.seq_info.copy()
+    output_files = {}
 
     with gzip.open(arguments['<features.gtf.gz>'], mode="rt") as f:
         for row in f:
@@ -42,11 +43,35 @@ if __name__ == "__main__":
             end = int(row[4])
             strand = 0 if row[6] == '+' else 1
             annotations = [_.strip() for _ in row[8].split(";")]
-            sub_seq = pgrtk.u8_to_string(sdb.get_sub_seq("HLA-ClassII_seq.fa.gz", ctg_name, start-1, end))
+            sub_seq = pgrtk.u8_to_string(sdb.get_sub_seq(arguments['<sequences.fa.gz>'], ctg_name, start-1, end))
             if strand == 1:
                 sub_seq = pgrtk.rc(sub_seq)
 
+            feature_start = start-1
+            feature_end = end
+
             
-            print(ctg_name, feature_name, start, end, strand, sub_seq, annotations)
+            #print(ctg_name, feature_name, start, end, strand, sub_seq, annotations)
+
+
+            gene_name = None
+            for r in annotations:
+                if r.startswith("gene_name"):
+                    gene_name = r
+
+            if gene_name is not None:
+                gene_name = gene_name.split()[1].strip('"')
+                out_filename= gene_name+"_features.fa"
+                if out_filename not in output_files:
+                    output_files[out_filename] = open(out_filename, "w")
+                out_file = output_files[out_filename]
+                print(f">{gene_name}::{feature_name}::{ctg_name}::{feature_start}-{feature_end}", file = out_file)
+                print(sub_seq, file = out_file)
+
+
+                # print(ctg_name, feature_name, start, end, strand, sub_seq, gene_name, annotations)
+
+    for _, f in output_files.items():
+        f.close()
 
 
